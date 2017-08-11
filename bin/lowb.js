@@ -2,24 +2,38 @@
 /**
  * Created by biezhi on 2017/8/11.
  */
-var fs = require("fs"), path = process.cwd();
+var cmd = require('commander');
+var appInfo = require('./package.json');
+var fs = require('fs');
+var path = require('path');
 
-var run = function (obj) {
-    if (obj[0] === '-v') {
-        console.log('version is 1.0.0');
-    } else if (obj[0] === '-h') {
-        console.log('Useage:');
-        console.log('  -v --version [show version]');
-    } else {
-        fs.readdir(path, function (err, files) {
-            if (err) {
-                return console.log(err);
-            }
-            for (var i = 0; i < files.length; i += 1) {
-                console.log(files[i]);
-            }
-        });
-    }
-};
-//获取除第一个命令以后的参数，使用空格拆分
-run(process.argv.slice(2));
+
+var animals = ['dog', 'pig', 'cow', 'elephant'];
+
+function list() {
+    console.log(animals.join(', '));
+}
+
+function show(value) {
+    console.log('animal is %s', value);
+}
+
+cmd
+    .version(appInfo.version)
+    .option('-a, --animal <value>', 'animal type, default is random', 'random')
+    .action(show)
+    .option('-l, --list', 'show animal list', list)
+    .parse(process.argv);
+
+
+if(!cmd.list){
+    console.log('animal %s', cmd.animal)
+
+    var filepath = path.join(__dirname, 'data/animals.txt');
+    var animals = fs.readFileSync(filepath).toString();
+    var sep = '===============++++SEPERATOR++++====================\n';
+    animals = animals.split(sep);
+    // animals = animals.split(sep).map(pad);
+    console.log(animals[0]);
+
+}

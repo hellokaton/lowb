@@ -13,10 +13,12 @@
   "keywords": [
     "lowb"
   ],
-  "main": "index.js",
   "bin": {
     "lowb": "bin/lowb.js"
   },
   "author": "biezhi <biezhi.me@gmail.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "dependencies": {
+    "commander": "^2.11.0"
+  }
 }
