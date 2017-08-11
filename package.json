@@ -1,7 +1,7 @@
 {
   "name": "lowb",
-  "version": "1.0.0",
-  "description": "lowb project",
+  "version": "1.0.1",
+  "description": "lowb项目，在命令行下输出名言、段子、诗歌的小玩意~",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
