@@ -60,3 +60,4 @@ typings/
 .env
 
 .idea/*
+/npm-debug.log

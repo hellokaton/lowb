@@ -9,11 +9,7 @@
 
 ## 预览
 
-<img src="https://i.loli.net/2017/08/11/598d80757c6fe.png" title="lowb" width="842" height="525"/>
-
-<img src="https://i.loli.net/2017/08/11/598d80757ffbc.png" title="lowb" width="842" height="525"/>
-
-<img src="https://i.loli.net/2017/08/11/598d807581af9.png" title="lowb" width="842" height="525"/>
+[![asciicast](https://asciinema.org/a/132940.png)](https://asciinema.org/a/132940)
 
 ## 安装
 
