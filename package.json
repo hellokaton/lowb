@@ -15,7 +15,7 @@
   ],
   "main": "index.js",
   "bin": {
-    "wcj": "bin/lowb.js"
+    "lowb": "bin/lowb.js"
   },
   "author": "biezhi <biezhi.me@gmail.com>",
   "license": "MIT"
