@@ -1,0 +1,22 @@
+{
+  "name": "lowb",
+  "version": "1.0.0",
+  "description": "lowb project",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/biezhi/lowb.git"
+  },
+  "keywords": [
+    "lowb"
+  ],
+  "main": "index.js",
+  "bin": {
+    "wcj": "bin/lowb.js"
+  },
+  "author": "biezhi <biezhi.me@gmail.com>",
+  "license": "MIT"
+}
