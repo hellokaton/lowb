@@ -7,22 +7,49 @@ var appInfo = require('../package.json');
 var fs      = require('fs');
 var path    = require('path');
 
-var filepath = path.join(__dirname, '../data/animals.txt');
-var animals  = fs.readFileSync(filepath).toString();
-var sep      = '===============++++SEPERATOR++++====================\n';
-animals      = animals.split(sep);
+var animals = fs.readFileSync(path.join(__dirname, '../data/animals.txt')).toString();
+animals     = animals.split('===============++++SEPERATOR++++====================\n');
 
+var quotes = fs.readFileSync(path.join(__dirname, '../data/quotes.txt')).toString().split('%\n');
+var tang300 = fs.readFileSync(path.join(__dirname, '../data/tang300.txt')).toString().split('%\n');
+var song100 = fs.readFileSync(path.join(__dirname, '../data/song100.txt')).toString().split('%\n');
+
+/**
+ * 返回一个随机的动物ascii
+ *
+ * @returns {*}
+ */
 function randomAnimal() {
     return animals[Math.floor(Math.random() * animals.length)];
+}
+
+/**
+ * 根据类型返回名言或段子
+ *
+ * @param type
+ * @returns {string}
+ */
+function prefix(type) {
+    switch (type) {
+        case 'quotes':
+            return quotes[Math.floor(Math.random() * quotes.length)];
+        case 'tang':
+            return tang300[Math.floor(Math.random() * tang300.length)];
+        case 'song':
+            return song100[Math.floor(Math.random() * song100.length)];
+        default:
+            return tang300[Math.floor(Math.random() * tang300.length)];
+    }
 }
 
 cmd
     .version(appInfo.version)
     .option('-i, --index <n>', 'ascii art index, default is random', -1, parseInt)
+    .option('-t, --type <value>', 'quotes/jokes/tang/song', 'quotes')
     .parse(process.argv);
 
-if (cmd.index == -1) {
-    console.log(randomAnimal())
-} else {
-    console.log(animals[cmd.index])
-}
+var animal = cmd.index === -1 ? randomAnimal() : animals[cmd.index];
+
+console.log(prefix(cmd.type));
+
+console.log(animal);
