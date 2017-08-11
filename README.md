@@ -9,7 +9,7 @@
 
 ## 预览
 
-[![asciicast](https://asciinema.org/a/132940.png)](https://asciinema.org/a/132940)
+<a href="https://asciinema.org/a/132942" target="_blank"><img src="https://asciinema.org/a/132942.png" /></a>
 
 ## 安装
 
