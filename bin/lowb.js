@@ -10,7 +10,7 @@ var path    = require('path');
 var animals = fs.readFileSync(path.join(__dirname, '../data/animals.txt')).toString()
                 .split('===============++++SEPERATOR++++====================\n');
 
-var jokes  = fs.readFileSync(path.join(__dirname, '../data/jokes.txt')).toString().split('%\n');
+var jokes   = fs.readFileSync(path.join(__dirname, '../data/jokes.txt')).toString().split('%\n');
 var quotes  = fs.readFileSync(path.join(__dirname, '../data/quotes.txt')).toString().split('%\n');
 var tang300 = fs.readFileSync(path.join(__dirname, '../data/tang300.txt')).toString().split('%\n');
 var song100 = fs.readFileSync(path.join(__dirname, '../data/song100.txt')).toString().split('%\n');
